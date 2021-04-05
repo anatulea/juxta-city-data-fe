@@ -11,6 +11,7 @@ import { createUserContext } from "../../../functions";
 import UserContext from "../../../contexts/UserContext";
 import { Grid } from "semantic-ui-react";
 import ExploreCity from "./ExploreCity";
+import AddProfileBox from "./AddProfileBox.js";
 
 export default function Profile(props) {
   const [editing, setEditing] = useState(false);
@@ -35,11 +36,13 @@ export default function Profile(props) {
       <NavBar {...props} />
       <Grid style={{ margin: "0 7%" }}>
         <Grid.Row columns={2} style={{ justifyContent: "center" }}>
-          <Grid.Column width={4}>
-            <ProfileInfo toggleEditing={toggleEditing} />
-          </Grid.Column>
-          <AddProfile profileData={profileData} />
+          {profileData.length === undefined ? null : (
+            <Grid.Column width={4}>
+              <ProfileInfo toggleEditing={toggleEditing} />
+            </Grid.Column>
+          )}
           <Grid.Column width={12}>
+            <AddProfileBox profileData={profileData} />
             <Favorites {...props} />
             <RecommendedComponent {...props} />
             <ExploreCity />
