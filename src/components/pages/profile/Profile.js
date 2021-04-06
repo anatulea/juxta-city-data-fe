@@ -34,14 +34,14 @@ export default function Profile(props) {
   return (
     <>
       <NavBar {...props} />
-      <Grid style={{ margin: "0 7%" }}>
-        <Grid.Row columns={2} style={{ justifyContent: "center" }}>
+      <Grid style={{ margin: "0 10%" }} stackable columns={2} >
+        <Grid.Row style={{ justifyContent: "center" }}>
           {profileData.length === undefined ? null : (
-            <Grid.Column width={4}>
-              <ProfileInfo toggleEditing={toggleEditing} />
+            <Grid.Column textAlign="center"  mobile={12} tablet={8} computer={4}>
+              <ProfileInfo  toggleEditing={toggleEditing} />
             </Grid.Column>
           )}
-          <Grid.Column width={12}>
+          <Grid.Column  textAlign="center" mobile={12} tablet={8} computer={12}>
             <AddProfileBox profileData={profileData} />
             <Favorites {...props} />
             <RecommendedComponent {...props} />

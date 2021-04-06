@@ -3,7 +3,7 @@ import "../../../index.scss";
 import StateSelect from "./StateSelect";
 import ZipCode from "./ZipCode";
 import Loading from "./Loading";
-import { Form, Card, Button } from "semantic-ui-react";
+import { Form, Card, Button, Input } from "semantic-ui-react";
 
 function EditProfileInputs({ handleSubmit, addHandleChange, userData }) {
   if (userData) {
@@ -32,7 +32,12 @@ function EditProfileInputs({ handleSubmit, addHandleChange, userData }) {
         value: userData.address,
         type: "text",
       },
-      { name: "city", placeholder: "City", value: userData.city, type: "text" },
+      {
+        name: "city",
+        placeholder: "City",
+        value: userData.city,
+        type: "text",
+      },
     ];
 
     return (
@@ -40,21 +45,17 @@ function EditProfileInputs({ handleSubmit, addHandleChange, userData }) {
         <Card.Content header="Edit profile information" />
         <Form noValidate autoComplete="off" onSubmit={handleSubmit}>
           {inputData.map((item, index) => (
-            <div key={index}>
-              <Form.Field key={index}>
-                <label htmlFor={item.name}> {item.placeholder} </label>
-
-                <input
-                  name={item.name}
-                  type={item.type}
-                  placeholder={item.placeholder}
-                  className="input"
-                  onChange={addHandleChange}
-                  aria-label={item.placeholder}
-                  defaultValue={item.value}
-                />
-              </Form.Field>
-            </div>
+            <Form.Field key={index}>
+              <label htmlFor={item.name}> {item.placeholder} </label>
+              <Input
+                name={item.name}
+                type={item.type}
+                placeholder={item.placeholder}
+                onChange={addHandleChange}
+                aria-label={item.placeholder}
+                defaultValue={item.value}
+              />
+            </Form.Field>
           ))}
           <Form.Field>
             <label htmlFor="State">State</label>

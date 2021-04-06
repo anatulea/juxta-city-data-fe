@@ -28,7 +28,7 @@ const ModalDeleteProfile = ({ openDel, setOpenDel, deleteUserProfile }) => {
         </Modal.Content>
         <hr />
         <Modal.Actions>
-          <Button color="gray" onClick={() => setOpenDel(false)}>
+          <Button color="grey" onClick={() => setOpenDel(false)}>
             <Icon name="remove" /> Cancel
           </Button>
           <Button color="red" onClick={handleYes}>
