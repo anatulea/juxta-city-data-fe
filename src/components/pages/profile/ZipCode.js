@@ -1,6 +1,6 @@
 import React from "react";
 
-const ZipCode = ({ addHandleChange, handleTextFocus ,defaultv}) => {
+const ZipCode = ({ addHandleChange}) => {
 
   return (
     <div>
@@ -9,10 +9,6 @@ const ZipCode = ({ addHandleChange, handleTextFocus ,defaultv}) => {
         type="number"
         placeholder="Zip Code"
         className="input"
-        // data-strokedashoffset="-2040"
-        // data-strokedasharray="240 3000"
-        // defaultValue={defaultv}
-        // onFocus={handleTextFocus}
         onChange={addHandleChange}
         aria-label="Zip Code"
       />

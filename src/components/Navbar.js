@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import Logo from "../assets/logo.png";
 import poly from "../assets/polydown.png";
-import profiledefault from '../assets/default.png';
+import profiledefault from '../assets/userProfile.png';
 import UserContext from "../contexts/UserContext";
 import ProfileContext from "../contexts/ProfileContext";
 import ModalSignIn from "./auth/ModalSignIn";

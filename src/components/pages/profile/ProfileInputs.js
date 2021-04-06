@@ -2,7 +2,7 @@ import React from "react";
 import "../../../index.scss";
 import StateSelect from "./StateSelect";
 import ZipCode from "./ZipCode";
-import { Form, Card, Button } from "semantic-ui-react";
+import { Form, Card, Button, Input } from "semantic-ui-react";
 
 
 function ProfileInputs({ handleSubmit, addHandleChange }) {
@@ -36,29 +36,26 @@ function ProfileInputs({ handleSubmit, addHandleChange }) {
 
   return (
     <Card className="ui cards" style={{ padding: "20px", margin: "20px" }}>
-      <Card.Content header="Complete profile information" />
+      <Card.Content header="Add profile information" />
       <Form
         noValidate
         autoComplete="off"
         onSubmit={handleSubmit}
       >
         {inputData.map((item, index) => (
-          <div key={index}>
             <Form.Field key={index}>
               <label className="form-label" htmlFor={item.name}>
                 {item.placeholder}
               </label>
-              <input
+              <Input
                 data-testid={item.name}
                 name={item.name}
                 type={item.type}
                 placeholder={item.placeholder}
-                className="input"
                 onChange={addHandleChange}
                 aria-label={item.placeholder}
               />
             </Form.Field>
-          </div>
         ))}
         <Form.Field>
           <label htmlFor="State">State</label>

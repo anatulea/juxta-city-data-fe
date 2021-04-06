@@ -21,7 +21,6 @@ const EditUser = (props) => {
     event.preventDefault();
     editProfile(profileId, user).then(() => window.location.reload());
   };
-
   return (
     <EditForm
       handleEditChange={handleEditChange}
