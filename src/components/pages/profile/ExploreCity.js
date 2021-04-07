@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import SearchBar from '../../subComponents/SearchBar';
 import { Button, Card } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import ModalSurvey from '../../surveyQuestions/ModalSurvey';
 
-export default function ExploreCity() {
+export default function ExploreCity(props) {
+  
   const history = useHistory();
   return (
     <Card fluid style={{ textAlign: 'center', padding:'40px 0'}}>
@@ -14,15 +16,7 @@ export default function ExploreCity() {
         <Card.Header as='h1' style={{  marginTop:'40px'}}>
           Or take our Survey to get recommendations!
         </Card.Header>
-        <Button onClick={() => history.push('/survey')}  alt='Take the survey button'
-          style={{
-            backgroundColor: '#0074cc',
-            color: 'white',
-            width: '200px',
-          }}
-        >
-          Take the survey
-        </Button>
+        <ModalSurvey  history={history}/>
       </Card.Content>
     </Card>
   );

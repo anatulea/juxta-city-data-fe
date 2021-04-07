@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import NavBar from "../../Navbar.js";
 import ProfileInfo from "./ProfileInfo";
-import AddProfile from "./AddProfile.js";
-import EditUser from "./EditUser";
 import ProfileContext from "../../../contexts/ProfileContext";
 import { createProfileContext } from "../../../functions";
 import RecommendedComponent from "../../recomended/RecommendedComponent";
@@ -34,18 +32,18 @@ export default function Profile(props) {
   return (
     <>
       <NavBar {...props} />
-      <Grid style={{ margin: "0 10%" }} stackable columns={2} >
+      <Grid style={{ margin: "0 10%" }} stackable columns={2}>
         <Grid.Row style={{ justifyContent: "center" }}>
           {profileData.length === undefined ? null : (
-            <Grid.Column textAlign="center"  mobile={12} tablet={8} computer={4}>
-              <ProfileInfo  toggleEditing={toggleEditing} />
+            <Grid.Column textAlign="center" mobile={12} tablet={8} computer={4}>
+              <ProfileInfo toggleEditing={toggleEditing} />
             </Grid.Column>
           )}
-          <Grid.Column  textAlign="center" mobile={12} tablet={8} computer={12}>
+          <Grid.Column textAlign="center" mobile={12} tablet={8} computer={12}>
             <AddProfileBox profileData={profileData} />
             <Favorites {...props} />
             <RecommendedComponent {...props} />
-            <ExploreCity />
+            <ExploreCity {...props} />
           </Grid.Column>
         </Grid.Row>
       </Grid>

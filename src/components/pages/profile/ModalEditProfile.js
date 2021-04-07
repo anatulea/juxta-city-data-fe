@@ -7,16 +7,13 @@ const ModalEditProfile = ({ modal, setModal, history }) => {
     <Modal
       closeIcon
       dimmer="blurring"
-      style={{
-        backgroundColor: "#f8f8f8",
-        width: "400px",
-        border: "1px solid balck",
-      }}
+      size="mini"
+      
       open={modal}
       onClose={() => setModal(false)}
       onOpen={() => setModal(true)}
     >
-      <div className="sign-in-up-modal">
+      <div className="modal">
         <EditUser history={history} />
       </div>
     </Modal>
