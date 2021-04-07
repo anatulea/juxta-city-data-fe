@@ -8,7 +8,7 @@ import Health from './descriptions/Health';
 
 export default function CityContent(props) {
   return (
-    <div className='desctiption-container'>
+    <div className='description-container'>
       <Population {...props} title={'Population'} data={props.cityData} />
       <Climate {...props} title={'Climate'} data={props.cityData} />
       <Economy {...props} title={'Economy'} data={props.cityData} />

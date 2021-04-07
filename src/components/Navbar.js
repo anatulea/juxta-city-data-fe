@@ -58,18 +58,18 @@ const NavBar = ({ history, location }) => {
     history.push("/dashboard");
   };
 
-  const handleAbout = () => {
-    history.push("/");
-    handleOpen();
+  // const handleAbout = () => {
+  //   history.push("/");
+  //   handleOpen();
 
-    setTimeout(() => {
-      const ele = document.getElementById("about");
-      if (ele) {
-        const offset = ele.offsetTop;
-        window.scrollTo(0, offset);
-      }
-    }, 200);
-  };
+  //   setTimeout(() => {
+  //     const ele = document.getElementById("about");
+  //     if (ele) {
+  //       const offset = ele.offsetTop;
+  //       window.scrollTo(0, offset);
+  //     }
+  //   }, 200);
+  // };
 
   const logout = () => {
     handleOpen();
@@ -88,7 +88,7 @@ const NavBar = ({ history, location }) => {
         {/* <Menu.Item>
           <Link to="/survey">Survey</Link>
         </Menu.Item> */}
-        <Menu.Item onClick={handleAbout}> About</Menu.Item>
+        {/* <Menu.Item onClick={handleAbout}> About</Menu.Item> */}
         <Menu.Item onClick={handleDash}> Dashboard</Menu.Item>
         <Menu.Item onClick={logout}> Logout</Menu.Item>
       </Menu>

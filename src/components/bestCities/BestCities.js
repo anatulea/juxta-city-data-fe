@@ -11,8 +11,8 @@ const BestCities = () => {
   }, []);
 
   return (
-    <Container fluid>
-      <Header as="h1" style={{ marginLeft: "8%", fontSize: "3rem" }}>
+    <Container fluid style = {{margin: "10px auto",width: "85%"}} >
+      <Header as="h1" style={{fontSize: "3rem" }}>
         Explore cities
         <Header.Subheader as="h1" style={{ fontSize: "1.5rem" }}>
           Check out our collection of cities with the highest livability score
