@@ -15,7 +15,13 @@ export default function SimpleModal() {
   return (
     <div>
       <div onClick={handleOpen}> <Icon color='blue' size='small' name='info circle'/>  </div>
-      <Modal closeIcon open={open} onClose={handleClose}
+      <Modal 
+      closeIcon 
+      open={open} 
+      onClose={handleClose} 
+      style={{
+        margin:'20% 0'
+      }}
         aria-label='cost of living index info' size='tiny' >
         <Header icon='info circle' content='Cost of Living Index' />
         <Modal.Content>

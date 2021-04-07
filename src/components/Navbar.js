@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import Logo from "../assets/logo.png";
 import poly from "../assets/polydown.png";
-import profiledefault from '../assets/userProfile.png';
+import profiledefault from "../assets/userProfile.png";
 import UserContext from "../contexts/UserContext";
 import ProfileContext from "../contexts/ProfileContext";
 import ModalSignIn from "./auth/ModalSignIn";
@@ -85,9 +85,9 @@ const NavBar = ({ history, location }) => {
         <Menu.Item>
           <Link to="/profile">Profile</Link>
         </Menu.Item>
-        <Menu.Item>
+        {/* <Menu.Item>
           <Link to="/survey">Survey</Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item onClick={handleAbout}> About</Menu.Item>
         <Menu.Item onClick={handleDash}> Dashboard</Menu.Item>
         <Menu.Item onClick={logout}> Logout</Menu.Item>
@@ -102,7 +102,12 @@ const NavBar = ({ history, location }) => {
     <NavDiv pathname={location.pathname}>
       <Link className="link" to="/">
         <img
-          style={{ width: "170px", height: "65px", paddingTop: "10px", paddingLeft: "20px" }}
+          style={{
+            width: "170px",
+            height: "65px",
+            paddingTop: "10px",
+            paddingLeft: "20px",
+          }}
           src={Logo}
           alt="Find Ur City Logo"
         />
@@ -125,26 +130,21 @@ const NavBar = ({ history, location }) => {
               }}
             />
             <button className="link" onClick={handleOpen}>
-              <img
-                id="dropdown"
-                src={poly}
-                alt="navigation arrow here"
-              />
+              <img id="dropdown" src={poly} alt="navigation arrow here" />
             </button>
             {open ? body : <span></span>}
           </Li>
         </UL>
       ) : (
-          <UL>
-            <Li>
-              <Button onClick={() => setModal(true)}>Sign In</Button>
-              <ModalSignIn modal={modal} setModal={setModal} history={history} />
-            </Li>
-          </UL>
-        )}
+        <UL>
+          <Li>
+            <Button onClick={() => setModal(true)}>Sign In</Button>
+            <ModalSignIn modal={modal} setModal={setModal} history={history} />
+          </Li>
+        </UL>
+      )}
     </NavDiv>
   );
 };
 
 export default NavBar;
-

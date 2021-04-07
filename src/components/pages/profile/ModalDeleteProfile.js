@@ -11,16 +11,13 @@ const ModalDeleteProfile = ({ openDel, setOpenDel, deleteUserProfile }) => {
     <Modal
       closeIcon
       dimmer="blurring"
-      style={{
-        backgroundColor: "#f8f8f8",
-        width: "400px",
-        border: "1px solid balck",
-      }}
+      size = "tiny"
+      
       open={openDel}
       onClose={() => setOpenDel(false)}
       onOpen={() => setOpenDel(true)}
     >
-      <div className="sign-in-up-modal">
+      <div className="modal">
         <Header icon="trash" content="Delete Profile" />
         <hr />
         <Modal.Content>

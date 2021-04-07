@@ -28,29 +28,46 @@ const SurveyQuestions = (props) => {
 
   const history = useHistory();
 
-  function updateState(name, val) {setFormState({ ...formState, [name]: val })};
+  function updateState(name, val) {
+    setFormState({ ...formState, [name]: val });
+  }
 
-   function getRecomended (){
-    getRecomendedCities(formState).then((cities) => setRecomendedCity(cities))
-    .then(() => history.push("/recommended")).catch((err) => console.log(err))};
+  function getRecomended() {
+    getRecomendedCities(formState)
+      .then((cities) => setRecomendedCity(cities))
+      .then(() => {
+        props.setOpenSurvey(false);
+        props.history.push("/recommended");
+      })
+      .catch((err) => console.log(err));
+  }
 
   function handleNoAuthSubmit(event) {
     event.preventDefault();
-    getRecomended()};
+    getRecomended();
+  }
 
   function handleSurveySubmit(event) {
     const profileId = profileData[0].id;
     event.preventDefault();
     putSurveyAnswers(formState, profileId);
-    getRecomended()};
+    getRecomended();
+  }
 
   useEffect(() => {
-    getSurveyData().then((response) => setSurveyData(response))}, []);
+    getSurveyData().then((response) => setSurveyData(response));
+  }, []);
 
   return (
-    <SurveyQuestionsBox props={props} profileData={profileData } handleNoAuthSubmit={handleNoAuthSubmit} 
-      handleSurveySubmit={handleSurveySubmit}  surveyData={surveyData}
-      updateState={updateState} formState={formState}/>
+    <SurveyQuestionsBox
+      props={props}
+      profileData={profileData}
+      handleNoAuthSubmit={handleNoAuthSubmit}
+      handleSurveySubmit={handleSurveySubmit}
+      surveyData={surveyData}
+      updateState={updateState}
+      formState={formState}
+    />
   );
 };
 

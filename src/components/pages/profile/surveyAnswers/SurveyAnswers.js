@@ -2,6 +2,7 @@ import React from 'react';
 import AnswerSurvey from './AnswerSurvey';
 import { useHistory } from 'react-router-dom';
 import { Button, Card } from 'semantic-ui-react';
+import ModalSurvey from '../../../surveyQuestions/ModalSurvey';
 
 const SurveyAnswers = ({ surveyData, profileData}) => {
   const history = useHistory();
@@ -15,9 +16,7 @@ const SurveyAnswers = ({ surveyData, profileData}) => {
             </Card.Content>
             <Card.Content>
               <AnswerSurvey info={info} surveyData={surveyData} />
-              <Button onClick={() => history.push('/survey')}
-                alt='retake the survey button' style={{ backgroundColor: '#0074cc', color: 'white', marginTop:'10px'}}
-              > Retake the survey</Button>
+              <ModalSurvey history={history}/>
             </Card.Content>
           </Card>
         );

@@ -7,16 +7,13 @@ const ModalAddProfile = ({ openAdd, setOpenAdd, history }) => {
     <Modal
       closeIcon
       dimmer="blurring"
-      style={{
-        backgroundColor: "#f8f8f8",
-        width: "400px",
-        border: "1px solid balck",
-      }}
+      size="mini"
+      
       open={openAdd}
       onClose={() => setOpenAdd(false)}
       onOpen={() => setOpenAdd(true)}
     >
-      <div className="sign-in-up-modal">
+      <div className="modal">
         <AddProfile history={history} />
       </div>
     </Modal>
