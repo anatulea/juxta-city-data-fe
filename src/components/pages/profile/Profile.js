@@ -3,7 +3,7 @@ import NavBar from "../../Navbar.js";
 import ProfileInfo from "./ProfileInfo";
 import ProfileContext from "../../../contexts/ProfileContext";
 import { createProfileContext } from "../../../functions";
-import RecommendedComponent from "../../recomended/RecommendedComponent";
+import RecommendedComponent from "../../recommended/RecommendedComponent";
 import Favorites from "../../Favorites/Favorites.js";
 import { createUserContext } from "../../../functions";
 import UserContext from "../../../contexts/UserContext";

@@ -1,23 +1,23 @@
-import React from 'react';
-import SurveyOptions from './SurveyOptions';
-import SimpleModal from './simpleModal/SimpleModal';
-import {
-  Container,
-  Question,
-  SurveyOptionsSection,
-} from './styles/surveyQuestionStyles';
+import React from "react";
+import SurveyOptions from "./SurveyOptions";
+import SimpleModal from "./simpleModal/SimpleModal";
+import { Segment, Header, Container } from "semantic-ui-react";
 
-const SurveyQuestion = ({item, formState, updateState}) => {
+const SurveyQuestion = ({ item, formState, updateState }) => {
   return (
-    <Container>
-      <Question data-testid="question" style={{display:'flex', flexDirection:'row'}}>
-        {item.question}{' '}
+    <Container fluid>
+      <Header
+        data-testid="question"
+        style={{ display: "flex", flexDirection: "row" }}
+      >
+        {item.question}{" "}
         {item.question ===
           `What is an acceptable cost of living index for your new city?` && (
           <SimpleModal />
         )}
-      </Question>
-      <SurveyOptionsSection data-testid="options-list">
+      </Header>
+
+      <Segment.Group horizontal data-testid="options-list">
         {item.options.map((option, index) => (
           <SurveyOptions
             key={index}
@@ -28,7 +28,7 @@ const SurveyQuestion = ({item, formState, updateState}) => {
             description={option.description}
           />
         ))}
-      </SurveyOptionsSection>
+      </Segment.Group>
     </Container>
   );
 };

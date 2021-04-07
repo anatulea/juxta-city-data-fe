@@ -1,36 +1,25 @@
 import React from "react";
-import { Heading } from "./styles/surveyQuestionsStyles";
 import SurveyQuestionForm from "./SurveyQuestionForm";
+import { Container, Header, Divider } from "semantic-ui-react";
 
-const SurveyQuestionsBox = ({
-  props,
-  profileData,
-  updateState,
-  formState,
-  handleNoAuthSubmit,
-  surveyData,
-  handleSurveySubmit,
-}) => {
+const SurveyQuestionsBox = (props) => {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Heading>Answer a few questions to get a city recomendation</Heading>
-        <SurveyQuestionForm
-          handleSubmit={
-            !profileData.length ? handleNoAuthSubmit : handleSurveySubmit
-          }
-          surveyData={surveyData}
-          updateState={updateState}
-          formState={formState}
-        />
-      </div>
-    </div>
+    <Container>
+      <Header as="h1">
+        Answer a few questions to get city recommendations
+      </Header>
+      <Divider section></Divider>
+      <SurveyQuestionForm
+        handleSubmit={
+          !props.profileData.length
+            ? props.handleNoAuthSubmit
+            : props.handleSurveySubmit
+        }
+        surveyData={props.surveyData}
+        updateState={props.updateState}
+        formState={props.formState}
+      />
+    </Container>
   );
 };
 

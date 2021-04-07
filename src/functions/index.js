@@ -120,7 +120,7 @@ const getBestCities = async () => {
   
 };
 
-const getRecomendedCities = async (queryParameters) => {
+const getRecommendedCities = async (queryParameters) => {
   let url = 'https://junta-test.herokuapp.com/recommend';
   url = buildQueryString(url, queryParameters);
   const res = await axios.get(url);
@@ -150,7 +150,7 @@ export {
   createUserContext,
   getCityData,
   getBestCities,
-  getRecomendedCities,
+  getRecommendedCities,
   getCityArray,
   postProfileRequest,
   createProfileContext,

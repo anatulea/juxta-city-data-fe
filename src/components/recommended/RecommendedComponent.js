@@ -1,18 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import RecommendedCard from "./RecommendedCard";
-import RecomendedContext from "../../contexts/RecomendedContext";
+import RecommendedContext from "../../contexts/RecommendedContext";
 import cityscape from "../../assets/cityscape.png";
 import { Header} from "semantic-ui-react";
 
 export default function RecommendedComponent(props) {
   const [cities, setCities] = useState(null);
-  const { recomendedCity } = useContext(RecomendedContext);
+  const { recommendedCity } = useContext(RecommendedContext);
 
   useEffect(() => {
-    if (recomendedCity.length > 0) {
-      setCities(recomendedCity);
+    if (recommendedCity.length > 0) {
+      setCities(recommendedCity);
     }
-  }, [recomendedCity]);
+  }, [recommendedCity]);
   return !cities ? (
     <></>
   ) : (

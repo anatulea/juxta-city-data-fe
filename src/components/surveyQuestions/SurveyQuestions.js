@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-import RecomendedContext from "../../contexts/RecomendedContext";
+import RecommendedContext from "../../contexts/RecommendedContext";
 import ProfileContext from "../../contexts/ProfileContext";
 import { useHistory } from "react-router-dom";
-import { getRecomendedCities } from "../../functions/index";
+import { getRecommendedCities } from "../../functions/index";
 import { getSurveyData, putSurveyAnswers } from "./SurveyFunctions";
 import SurveyQuestionsBox from "./SurveyQuestionsBox";
 
@@ -23,7 +23,7 @@ const SurveyQuestions = (props) => {
   const [surveyData, setSurveyData] = useState([]);
   const [formState, setFormState] = useState(initialState);
 
-  const { setRecomendedCity } = useContext(RecomendedContext);
+  const { setRecommendedCity } = useContext(RecommendedContext);
   const { profileData } = useContext(ProfileContext);
 
   const history = useHistory();
@@ -32,9 +32,9 @@ const SurveyQuestions = (props) => {
     setFormState({ ...formState, [name]: val });
   }
 
-  function getRecomended() {
-    getRecomendedCities(formState)
-      .then((cities) => setRecomendedCity(cities))
+  function getRecommended() {
+    getRecommendedCities(formState)
+      .then((cities) => setRecommendedCity(cities))
       .then(() => {
         props.setOpenSurvey(false);
         props.history.push("/recommended");
@@ -44,14 +44,14 @@ const SurveyQuestions = (props) => {
 
   function handleNoAuthSubmit(event) {
     event.preventDefault();
-    getRecomended();
+    getRecommended();
   }
 
   function handleSurveySubmit(event) {
     const profileId = profileData[0].id;
     event.preventDefault();
     putSurveyAnswers(formState, profileId);
-    getRecomended();
+    getRecommended();
   }
 
   useEffect(() => {

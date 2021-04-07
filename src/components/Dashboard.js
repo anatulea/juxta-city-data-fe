@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import NavBar from "./Navbar.js";
 import Header from "./pages/Header.js";
-import RecommendedComponent from "./recomended/RecommendedComponent";
+import RecommendedComponent from "./recommended/RecommendedComponent";
 import BestCities from "./bestCities/BestCities";
 import Favorites from "./Favorites/Favorites.js";
 import { createUserContext } from "../functions";

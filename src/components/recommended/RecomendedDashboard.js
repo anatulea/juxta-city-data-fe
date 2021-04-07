@@ -2,25 +2,25 @@ import React, { useEffect, useState, useContext } from "react";
 import NavBar from "../Navbar";
 import RecommendedCard from "./RecommendedCard";
 import cityscape from "../../assets/cityscape.png";
-import RecommendedContext from "../../contexts/RecomendedContext";
+import RecommendedContext from "../../contexts/RecommendedContext";
 import UserContext from "../../contexts/UserContext";
 import { Header, Button } from "semantic-ui-react";
 
 export default function RecommendedDashboard({ auth, history, location }) {
 
-  const { recomendedCity } = useContext(RecommendedContext);
+  const { recommendedCity } = useContext(RecommendedContext);
   const { userData } = useContext(UserContext);
 
   const user = Object.entries(userData).length;
 
   const [cities, setCities] = useState([]);
   useEffect(() => {
-    setCities(recomendedCity);
-    console.log(recomendedCity);
-    if (recomendedCity.length === 0) {
+    setCities(recommendedCity);
+    console.log(recommendedCity);
+    if (recommendedCity.length === 0) {
       history.push("/dashboard");
     }
-  }, [recomendedCity, history]);
+  }, [recommendedCity, history]);
 
   const props = { auth, history, location };
 
