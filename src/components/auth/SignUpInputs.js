@@ -1,13 +1,13 @@
 import React  from "react";
-import { Form } from "semantic-ui-react";
+import { Form, Input } from "semantic-ui-react";
 import SubmitButton from "./SubmitBotton";
 
 
 const SignUpInputs = ({ signUpChange, handleSubmit, form }) => {
 const signInData =[
-  {type:"text", name:"username",value: form.username },
-  {type:"email", name:"email", value: form.email },
-  {type:"password", name:"password", value: form.password }
+  {type:"text", name:"username",value: form.username, icon:'user' },
+  {type:"email", name:"email", value: form.email,icon:'at' },
+  {type:"password", name:"password", value: form.password, icon:'lock' }
 ]
 
   return (
@@ -17,8 +17,8 @@ const signInData =[
 
         {signInData.map((item,index)=>(
           <Form.Field key={index}>
-          <input type={item.type} name={item.name} placeholder={item.name}  aria-label={item.name} 
-            value={item.value}  onChange={(event) => signUpChange(event)}required variant="outlined"/>
+          <Input type={item.type} name={item.name} placeholder={item.name}  aria-label={item.name} 
+            value={item.value}  onChange={(event) => signUpChange(event)}required variant="outlined" icon={item.icon} iconPosition='left'/>
         </Form.Field>
         ))}
         <SubmitButton title= "Register"/>

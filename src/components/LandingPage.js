@@ -9,8 +9,9 @@ const LandingPage = (props) => {
     <div>
       <NavBar {...props} />
       <Header />
-      <SurveyBox />
       <BestCities {...props} />
+      <SurveyBox />
+
     </div>
   );
 };

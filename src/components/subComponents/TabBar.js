@@ -15,10 +15,10 @@ const TabBar = () => {
   };
 
   return (
-    <div className='tabbar'>
-      <Menu className='container-menu-city'  >
+    <div className='tabbar' >
+      <Menu className='container-menu-city' >
         <TabItems handleItemClick={handleItemClick}  activeItem={activeItem} />
-        <Menu.Menu position='right'>
+        <Menu.Menu  position='right'>
           <Menu.Item>
             <SearchBar /> 
           </Menu.Item>

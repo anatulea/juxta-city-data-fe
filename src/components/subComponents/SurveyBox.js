@@ -1,12 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Logo from "../../assets/newlogo.png";
+import Logo from "../../assets/logo.png";
 import ModalSurvey from "../surveyQuestions/ModalSurvey";
 import { Header, Image, Segment } from "semantic-ui-react";
 
 const SurveyCard = {
   margin: "0 auto",
-  width: "65rem",
+  width: "85%",
+  height:'550px',
   padding: "3rem",
   "border-radius": "5px",
   display: "flex",
@@ -21,14 +22,14 @@ const SurveyBox = () => {
   const history = useHistory();
 
   return (
-    <Segment content textAlign="center" style={SurveyCard}>
+    <Segment  textAlign="center" style={SurveyCard} id="survey-box">
       <Header image>
-        <Image src={Logo} style={{ width: "20rem" }} centered alt="citylogo" />
-        <h2>Introducing City Match Maker!</h2>
-        <p>
-          Get recommendations by answering a few questions and find a new place
+        <Image src={Logo} style={{ width: "20rem", marginBottom:"10%" }} centered alt="citylogo" />
+        <Header as='h1' style={{color:"white"}}>We Can Help You Find the Perfect City for You!</Header>
+        <Header as='h3' style={{color:"white"}}>
+          Get the most accurate recommendations by answering a few survey questions and find a new place
           to call home!
-        </p>
+        </Header>
       </Header>
       <ModalSurvey history={history} />
     </Segment>

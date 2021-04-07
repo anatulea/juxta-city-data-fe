@@ -377,3 +377,11 @@ p {
   padding-top:20px;
   width:100%;
 }
+#survey-box{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url('./assets/chicago2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+}

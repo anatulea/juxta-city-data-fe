@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Form} from "semantic-ui-react";
+import { Form, Input} from "semantic-ui-react";
 import ModalSignUp from "./ModalSignUp";
 import SubmitButton from "./SubmitBotton";
 import ModalContext from "../../contexts/ModalContext";
@@ -14,16 +14,16 @@ const SignInInputs = ({ signInChange, handleSubmit, signInForm, history }) => {
   };
 
   const signUpData = [
-    { type: "text", name: "username", value: signInForm.username },
-    { type: "password", name: "password", value: signInForm.password },
+    { type: "text", name: "username", value: signInForm.username, icon:'user'},
+    { type: "password", name: "password", value: signInForm.password, icon:'lock'},
   ];
 
   return (
     <Form onSubmit={handleSubmit}>
       <p id="signin-error" style={{ display: "none", color: "red" }}> Sorry User Not Found </p>
       {signUpData.map((inputField, index) => (
-        <Form.Field key={index}> <input  type={inputField.type} name={inputField.name} placeholder={inputField.name} aria-label={inputField.name}
-            value={inputField.value} onChange={(event) => signInChange(event)} required />
+        <Form.Field key={index}> <Input  type={inputField.type} name={inputField.name} placeholder={inputField.name} aria-label={inputField.name}
+            value={inputField.value} onChange={(event) => signInChange(event)} required  icon={inputField.icon} iconPosition='left'/>
         </Form.Field>
       ))}
 
