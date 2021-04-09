@@ -23,10 +23,11 @@ p {
   color: rgba(33, 33, 33, 0.75);
 }
 
-
+body{
+  background-color: #f8f8f8; 
+}
 // city view page extra style
 .singleCityViewBox {
-  background-color: #f8f8f8; 
   .city-content {
     display: flex;
     flex-direction: column;
@@ -208,4 +209,29 @@ p {
   bottom: 0;
   width: 100%;
   height:6rem;          /* Footer height */
+}
+#explore-city{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url('./assets/homes.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 45vh;
+}
+#favorite-card {
+  border: 1% #e0e0e0 solid;
+  border-radius: 3%;
+  box-shadow: 0px 3px 3px 0px rgba(211, 211, 211, 0.9);
+}
+#top-header{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url('./assets/dashboard-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    margin-top:-15px;
 }

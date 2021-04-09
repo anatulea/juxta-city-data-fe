@@ -13,7 +13,7 @@ export default function Climate(props) {
 
   return (
     <div id='box-container'>
-       <Divider horizontal>
+       <Divider horizontal style={{marginBottom:'30px'}}>
         <Header>
           <Icon name="thermometer quarter"  color='blue' />
           Climate
