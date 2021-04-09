@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import NavBar from "./Navbar.js";
-import Header from "./pages/Header.js";
+import TopHeader from "./pages/TopHeader.js";
 import RecommendedComponent from "./recommended/RecommendedComponent";
 import BestCities from "./bestCities/BestCities";
 import Favorites from "./Favorites/Favorites.js";
@@ -16,7 +16,7 @@ function Dashboard(props) {
   return (   
     <div>
         <NavBar {...props}/>
-        <Header />
+        <TopHeader />
         <RecommendedComponent {...props} />
         <Favorites {...props}/>
         <BestCities {...props}/>

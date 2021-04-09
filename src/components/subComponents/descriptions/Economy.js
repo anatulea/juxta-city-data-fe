@@ -15,7 +15,7 @@ export default function EconomyBox(props) {
 
   return (
     <div id='box-container'>
-      <Divider horizontal>
+      <Divider horizontal style={{marginBottom:'30px'}}>
         <Header>
           <Icon name="line graph" color='blue'/>
           Economy

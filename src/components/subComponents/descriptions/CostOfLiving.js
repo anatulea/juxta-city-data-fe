@@ -9,7 +9,7 @@ export default function CostOfLiving(props) {
 
   return (
     <div id='box-container'>
-      <Divider horizontal>
+      <Divider horizontal style={{marginBottom:'30px'}}>
         <Header>
           <Icon name="dollar sign"  color='blue' />
           Cost of living

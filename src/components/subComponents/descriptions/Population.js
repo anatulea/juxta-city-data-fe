@@ -5,7 +5,7 @@ import agelimit from "../../../assets/agelimit.png";
 export default function Population(props) {
   return (
     <div id="box-container">
-      <Divider horizontal>
+      <Divider horizontal style={{marginBottom:'30px'}}>
         <Header>
           <Icon name="users" color='blue'/>
           Population

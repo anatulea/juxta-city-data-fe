@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './pages/Header.js';
+import TopHeader from './pages/TopHeader.js';
 import BestCities from './bestCities/BestCities';
 import NavBar from './Navbar';
 import SurveyBox from './subComponents/SurveyBox.js';
@@ -8,10 +8,9 @@ const LandingPage = (props) => {
   return (
     <div>
       <NavBar {...props} />
-      <Header />
+      <TopHeader />
       <BestCities {...props} />
       <SurveyBox />
-
     </div>
   );
 };

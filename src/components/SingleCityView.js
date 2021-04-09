@@ -4,7 +4,7 @@ import NavBar from "./Navbar.js";
 import CityViewHeader from "./subComponents/CityViewHeader.js";
 import CityBody from "./subComponents/CityBody.js";
 import { getCityData } from "../functions";
-import TabBar from "./subComponents/TabBar";
+// import TabBar from "./subComponents/TabBar";
 
 function SingleCityView(props) {
   const { cityData, setCityData } = useContext(CityContext);
