@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 import FavoriteIcon from '../subComponents/FavoriteIcon';
 import { getCityData } from '../../functions';
 import CityContext from '../../contexts/CityContext';
-import { Card } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
+
 
 export default function FavoiriteCityCard(props) {
   const history = useHistory();
@@ -25,6 +26,9 @@ export default function FavoiriteCityCard(props) {
           {props.cityData.city}
         </Card.Header>
       </Card.Content>
+      <Card.Content onClick={handleClick} textAlign='center'>
+        <Image src={`https://maps.googleapis.com/maps/api/staticmap?center=${props.cityData.city}&zoom=6&size=200x200&scale=1&markers=size:mid%7Ccolor:0xFF8054%7Clabel:O%7C${props.cityData.city}&key=${process.env.REACT_APP_API_KEY}`} />      
+        </Card.Content>
     </Card>
   );
 }

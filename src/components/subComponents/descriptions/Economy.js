@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic } from 'semantic-ui-react';
+import { Statistic, Divider, Header, Icon } from "semantic-ui-react";
 import broke from "../../../assets/broke.png";
 import unemployed from "../../../assets/unemployed.png"
 import handcuffs from "../../../assets/handcuffs.png"
@@ -15,7 +15,12 @@ export default function EconomyBox(props) {
 
   return (
     <div id='box-container'>
-      <h2>Economy </h2>
+      <Divider horizontal>
+        <Header>
+          <Icon name="line graph" color='blue'/>
+          Economy
+        </Header>
+      </Divider>
         <Statistic.Group size='tiny' id={props.title.trim()}> 
 
           {incomeData.slice(0, 2).map((item, index)=>(

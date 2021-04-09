@@ -24,7 +24,7 @@ function SingleCityView(props) {
   ) : (
     <div className='singleCityViewBox'  style={{backgroundColor: '#f8f8f8'}}>
       <NavBar {...props} />
-      <TabBar />
+      {/* <TabBar /> */}
       <div className="city-content">
         <CityViewHeader {...props} cityData={cityData} />
         <CityBody {...props} cityData={cityData} />

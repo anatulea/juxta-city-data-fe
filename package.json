@@ -12,6 +12,7 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "google-maps-react": "^2.0.6",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-enzyme": "^7.1.2",

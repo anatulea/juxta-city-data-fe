@@ -5,11 +5,13 @@ import Climate from './descriptions/Climate';
 import Economy from './descriptions/Economy';
 import CostOfLiving from './descriptions/CostOfLiving';
 import Health from './descriptions/Health';
+import CityMap from './descriptions/CityMap';
 
 export default function CityContent(props) {
   return (
     <div className='description-container'>
       <Population {...props} title={'Population'} data={props.cityData} />
+      <CityMap {...props} />
       <Climate {...props} title={'Climate'} data={props.cityData} />
       <Economy {...props} title={'Economy'} data={props.cityData} />
 

@@ -12,7 +12,7 @@ const tabData = [
 const TabItems =({activeItem, handleItemClick})=>{
 
     return (
-        <Menu className='menu-city'compact icon='labeled' data-testid="tabs" style={{ backgroundColor: '#f2f2f2' }}>
+        <Menu className='menu-city' compact icon='labeled' data-testid="tabs" style={{ backgroundColor: '#f2f2f2' }}>
         {tabData.map((item, index) => (
           <Menu.Item
           style={{color:"black"}}

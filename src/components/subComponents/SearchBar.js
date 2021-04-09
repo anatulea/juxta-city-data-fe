@@ -90,6 +90,7 @@ const SearchBar = () => {
     }
   }, [search]);
   const handleSubmit = (e) => {
+    console.log('Clicked search')   
     e.preventDefault();
     getCityData(search).then((res) => {
       setCityData(res);

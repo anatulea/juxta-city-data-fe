@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic } from 'semantic-ui-react';
+import { Statistic, Divider, Header, Icon } from "semantic-ui-react";
 import airindex from "../../../assets/airindex.png";
 import sun from "../../../assets/sun.png";
 import snowflake from "../../../assets/snowflake.png";
@@ -13,7 +13,12 @@ export default function Climate(props) {
 
   return (
     <div id='box-container'>
-      <h2>Climate</h2>
+       <Divider horizontal>
+        <Header>
+          <Icon name="thermometer quarter"  color='blue' />
+          Climate
+        </Header>
+      </Divider>
       <Statistic.Group size='tiny' id={props.title.trim()}>
 
         <Statistic className="card-stats">

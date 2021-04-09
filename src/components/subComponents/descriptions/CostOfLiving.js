@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic } from 'semantic-ui-react';
+import { Statistic, Divider, Header, Icon } from "semantic-ui-react";
 import rent from "../../../assets/rent.png";
 import cash from "../../../assets/cash.png";
 import travel from "../../../assets/travel.png";
@@ -9,7 +9,12 @@ export default function CostOfLiving(props) {
 
   return (
     <div id='box-container'>
-      <h2>Cost of living </h2>
+      <Divider horizontal>
+        <Header>
+          <Icon name="dollar sign"  color='blue' />
+          Cost of living
+        </Header>
+      </Divider>
       <Statistic.Group size='tiny' id={props.title.trim()}>
         
         <Statistic className="card-stats"><h3>Cost of living score</h3>
