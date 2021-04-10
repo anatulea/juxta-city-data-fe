@@ -16,6 +16,7 @@ const ModalSurvey = (props) => {
           width: "200px",
           margin: "10px 0",
         }}
+        className="animate__animated animate__bounceIn"
       >
         Take survey
       </Button>
