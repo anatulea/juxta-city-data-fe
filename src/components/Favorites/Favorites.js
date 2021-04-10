@@ -2,12 +2,12 @@ import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 import FavoriteCityCard from "./FavoriteCityCard";
-import { Card } from 'semantic-ui-react';
+import { Grid, Divider, Header, Icon } from "semantic-ui-react";
 
 export default function Favoirtes() {
   const [cities, setCities] = useState([]);
-  const {userData} = useContext(UserContext);
-  
+  const { userData } = useContext(UserContext);
+
   const history = useHistory();
 
   useEffect(() => {
@@ -23,15 +23,20 @@ export default function Favoirtes() {
   return cities.length === 0 ? (
     <></>
   ) : (
-    <Card fluid style={{ marginTop:'20px'}}>
-     <Card.Content>
-     <Card.Header textAlign="center" as='h1' >Favorite Cities</Card.Header>
-      <Card.Group centered >
-        {cities.map((city) => (
-          <FavoriteCityCard key={city.id} cityData={city} />
-        ))}
-      </Card.Group>
-     </Card.Content>
-    </Card>
+    <>
+      <Divider horizontal>
+        <Header as="h2">Favorite Cities</Header>
+      </Divider>
+      <Grid stackable columns={3}>
+        <Grid.Row style={{ justifyContent: "center" }}>
+          {cities.map((city) => (
+            <Grid.Column mobile={14} tablet={9} computer={5}>
+              <FavoriteCityCard key={city.id} cityData={city} />
+              <br />
+            </Grid.Column>
+          ))}
+        </Grid.Row>
+      </Grid>
+    </>
   );
 }

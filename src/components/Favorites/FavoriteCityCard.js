@@ -19,7 +19,7 @@ export default function FavoiriteCityCard(props) {
     });
   };
   return (
-    <Card  id="favorite-card">
+    <Card  id="favorite-card" >
       <Card.Content style={{display: 'flex',flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'baseline', }} >
         <FavoriteIcon {...props} cityData={props.cityData} />
         <Card.Header as='h4' onClick={handleClick}>

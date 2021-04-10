@@ -7,8 +7,8 @@ const TopHeader = () => {
     <div textAlign="center"
     style={{ margin: "-15px auto", width: "100%" }}
     id="top-header">
-      <Header as="h1" style={{ color: "white", fontSize: '3.5rem'}}>Find your way home</Header>
-      <Header  as="h3" style={{ color: "white",fontSize: '2rem' }}>Discover a place you'll live and love</Header>
+      <Header as="h1" style={{ color: "white", fontSize: '3.5rem'}} className="animate__animated animate__backInDown">Find your way home</Header>
+      <Header  as="h3" style={{ color: "white",fontSize: '2rem' }} className="animate__animated animate__bounceIn">Discover a place you'll live and love</Header>
       <SearchBar/>
     </div>
   );
