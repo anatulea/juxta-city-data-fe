@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 import FavoriteCityCard from "./FavoriteCityCard";
-import { Grid, Divider, Header, Icon } from "semantic-ui-react";
+import { Divider, Header} from "semantic-ui-react";
 
 export default function Favoirtes() {
   const [cities, setCities] = useState([]);
@@ -23,20 +23,23 @@ export default function Favoirtes() {
   return cities.length === 0 ? (
     <></>
   ) : (
-    <>
+    <div style={{ margin: "3% 7%" }}>
       <Divider horizontal>
         <Header as="h2">Favorite Cities</Header>
       </Divider>
-      <Grid stackable columns={3}>
-        <Grid.Row style={{ justifyContent: "center" }}>
-          {cities.map((city) => (
-            <Grid.Column mobile={14} tablet={9} computer={5}>
-              <FavoriteCityCard key={city.id} cityData={city} />
-              <br />
-            </Grid.Column>
-          ))}
-        </Grid.Row>
-      </Grid>
-    </>
+
+      <div
+        id="city-grid"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+          gridGap: "1rem",
+        }}
+      >
+        {cities.map((city) => (
+          <FavoriteCityCard key={city.id} cityData={city} />
+        ))}
+      </div>
+    </div>
   );
 }

@@ -219,11 +219,14 @@ body{
   min-height: 45vh;
 }
 #favorite-card {
+  align-items: center;
   height:300px;
   border: 1% #e0e0e0 solid;
   border-radius: 3%;
   box-shadow: 0px 3px 3px 0px rgba(211, 211, 211, 0.9);
 }
+
+
 #top-header{
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url('./assets/dashboard-banner.jpg');
