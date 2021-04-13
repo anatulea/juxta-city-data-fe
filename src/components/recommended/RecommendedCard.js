@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import FavoriteIcon from "../subComponents/FavoriteIcon";
 import CityContext from "../../contexts/CityContext";
 import { getCityData } from "../../functions";
-import { Card, Header, Button } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 
 export default function RecommendedCard(props) {
   const { setCityData } = useContext(CityContext);
@@ -14,20 +14,29 @@ export default function RecommendedCard(props) {
       localStorage.setItem("cityName", res.city);
       props.history.push("/cityview");
     });
-  };;
-const livabilityScore = Math.floor(props.cityData.livability_score * 10) / 10 
+  };
+  const livabilityScore = Math.floor(props.cityData.livability_score * 10) / 10;
 
-return (
-  <Card >
-    <div className="card-header" >
-      <FavoriteIcon  cityData={props.cityData} {...props} />
-      <Header as="h4" >{props.cityData.name_and_state}</Header>
-      <p className="livability-score">{livabilityScore}</p>
+  return (
+    <div id="recommended-card">
+      <div
+        className="recommended-header"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+        }}
+      >
+        <FavoriteIcon cityData={props.cityData} {...props} />
+        <h4>{props.cityData.name_and_state}</h4>
+        <p className="livability-score">{livabilityScore}</p>
+      </div>
+      <hr color="#e0e0e0" />
+      <p>{props.cityData.population_desc}</p>
+      <Button basic onClick={handleClick}>
+        Learn More
+      </Button>
     </div>
-    <Card.Content>{props.cityData.population_desc}</Card.Content>
-    <Button basic onClick={handleClick}>
-      Learn More
-    </Button>
-  </Card>
-);
+  );
 }

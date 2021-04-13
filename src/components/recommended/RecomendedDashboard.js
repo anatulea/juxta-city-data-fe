@@ -4,10 +4,9 @@ import RecommendedCard from "./RecommendedCard";
 import cityscape from "../../assets/cityscape.png";
 import RecommendedContext from "../../contexts/RecommendedContext";
 import UserContext from "../../contexts/UserContext";
-import { Header, Button } from "semantic-ui-react";
+import { Header, Button, Divider } from "semantic-ui-react";
 
 export default function RecommendedDashboard({ auth, history, location }) {
-
   const { recommendedCity } = useContext(RecommendedContext);
   const { userData } = useContext(UserContext);
 
@@ -25,21 +24,35 @@ export default function RecommendedDashboard({ auth, history, location }) {
   const props = { auth, history, location };
 
   return (
-    <div >
+    <div>
       <NavBar {...props} />
-      <Header as="h1" style={{textAlign:"center"}} >Your Recommended Cities</Header>
-      <div className="cardBox">
+      <Divider horizontal style={{ margin: "3% 7%" }}>
+        <Header as="h2">Your Recommended Cities </Header>
+      </Divider>
+      <div id="city-grid">
         {cities ? (
           cities.map((city) => (
             <RecommendedCard key={city.id} {...props} cityData={city} />
           ))
-        ) : ( <></>)}
+        ) : (
+          <></>
+        )}
 
-        <img src={cityscape}  alt="cityscape" className="dash-cityscape"/>
+        <img src={cityscape} alt="cityscape" className="dash-cityscape" />
       </div>
-        <Button style={{color:"white", marginLeft:"85%",backgroundColor:'#0074cc', marginBottom:'50px' }} onClick={()=>{user > 0 ?(history.push("/dashboard")):( history.push("/")) } } >
-          Go To Dashboard
-        </Button>
+      <Button
+        style={{
+          color: "white",
+          marginLeft: "85%",
+          backgroundColor: "#0074cc",
+          marginBottom: "50px",
+        }}
+        onClick={() => {
+          user > 0 ? history.push("/dashboard") : history.push("/");
+        }}
+      >
+        Go To Dashboard
+      </Button>
     </div>
   );
 }
