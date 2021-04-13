@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 import FavoriteCityCard from "./FavoriteCityCard";
-import { Divider, Header} from "semantic-ui-react";
+import { Divider, Header } from "semantic-ui-react";
 
 export default function Favoirtes() {
   const [cities, setCities] = useState([]);
@@ -29,7 +29,6 @@ export default function Favoirtes() {
       </Divider>
 
       <div
-        id="city-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",

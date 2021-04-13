@@ -119,7 +119,7 @@ body{
 #register {
   color: black;
 }
-.cardBox {
+#cardBox {
   display: flex;
   flex-direction: row;
   margin: 2% 5%;
@@ -225,7 +225,35 @@ body{
   border-radius: 3%;
   box-shadow: 0px 3px 3px 0px rgba(211, 211, 211, 0.9);
 }
-
+#city-grid{
+  margin: 3% 7% ;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem
+}
+#recommended-card{
+  align-items: center;
+  padding:5px 7px;
+  max-height:350px;
+  border: 1% #e0e0e0 solid;
+  border-radius: 3%;
+  box-shadow: 0px 3px 3px 0px rgba(211, 211, 211, 0.9);
+  .recommended-header{
+    .livability-score{
+      width: 50px;
+      height: 60px;
+      color: black;
+      font-weight: bold;
+      padding-right: 5px;
+      padding-left: 2px;
+      margin: 0 auto;
+      line-height: 50px;
+      background-image: url('./assets/livabilityIcon.png');
+      background-repeat: no-repeat;
+      background-size: 36px 54px;
+    }
+  }
+}
 
 #top-header{
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
