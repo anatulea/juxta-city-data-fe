@@ -11,7 +11,9 @@ export default function ExploreCity() {
     <Card id="explore-city" fluid style={{ textAlign: 'center'}}>
       <Card.Content >
         <Card.Header  style={{ color: "white", margin: "5% 0", fontSize:'2.5rem'}}>Search for a city</Card.Header>
-        <SearchBar /> 
+       <div style={{display:'flex', flexDirection:'row',justifyContent:'center'}}>
+       <SearchBar /> 
+       </div>
         <br></br>
         <Card.Header  style={{  marginTop:'5%', color: "white", fontSize:'2rem'}}>
           Or take our Survey to get recommendations!
