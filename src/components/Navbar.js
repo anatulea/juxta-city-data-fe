@@ -8,7 +8,7 @@ import ProfileContext from "../contexts/ProfileContext";
 import ModalSignIn from "./auth/ModalSignIn";
 import ModalContext from "../contexts/ModalContext";
 import SearchBar from "../components/subComponents/SearchBar";
-import { Menu, Button, Icon, Image, Dropdown } from "semantic-ui-react";
+import { Menu, Button, Image, Dropdown } from "semantic-ui-react";
 
 const NavBar = ({ history, location }) => {
   const { setUserData } = useContext(UserContext);
@@ -29,6 +29,9 @@ const NavBar = ({ history, location }) => {
     history.push("/dashboard");
   };
 
+  const goToProfile = () => {
+    history.push("/profile");
+  };
   const logout = () => {
     handleOpen();
     localStorage.clear();
@@ -37,24 +40,45 @@ const NavBar = ({ history, location }) => {
     history.push("/");
   };
 
-  const body = (
-    <Dropdown.Menu size="small" vertical attached="top">
-      <Dropdown.Item>
-        <Link to="/profile">
-          <Icon name="user" /> Profile
-        </Link>
-      </Dropdown.Item>
-      <Dropdown.Item onClick={handleDash}>
-        <Icon name="dashboard" /> Dashboard
-      </Dropdown.Item>
-      <Dropdown.Item onClick={logout}>
-        <Icon name="external square alternate" /> LogOut
-      </Dropdown.Item>
-    </Dropdown.Menu>
+  const options = [
+    { 
+      key: "profile", 
+      icon: "user", 
+      text: "Profile", 
+      onClick: goToProfile 
+    },
+    {
+      key: "dashboard",
+      icon: "dashboard",
+      text: "Dashboard",
+      onClick: handleDash,
+    },
+    {
+      key: "logout",
+      icon: "external square alternate",
+      text: "LogOut",
+      onClick: logout,
+    },
+  ];
+
+  const DropdownMenu = (
+    <Button.Group color="blue">
+      <Dropdown
+        className="button icon"
+        floating
+        options={options}
+        trigger={<></>}
+      />
+    </Button.Group>
   );
 
   return (
-    <Menu size="mini" stackable secondary style={{ backgroundColor: "#f2f2f2" }}>
+    <Menu
+      size="mini"
+      stackable
+      secondary
+      style={{ backgroundColor: "#f2f2f2", alignItems: "center" }}
+    >
       <Menu.Item>
         <Link className="link" to="/">
           <Image size="small" src={Logo} alt="Find Ur City Logo" />
@@ -71,8 +95,8 @@ const NavBar = ({ history, location }) => {
         )}
 
         {token ? (
-          <Menu.Item position="right" attached="top">
-            <Dropdown.Item simple>
+          <Menu.Item>
+            <Dropdown.Item>
               <Image
                 avatar
                 src={
@@ -88,7 +112,7 @@ const NavBar = ({ history, location }) => {
                   borderRadius: "50%",
                 }}
               />
-              {open ? body : <span></span>}
+              {DropdownMenu}
             </Dropdown.Item>
           </Menu.Item>
         ) : (

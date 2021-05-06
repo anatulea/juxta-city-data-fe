@@ -18,7 +18,8 @@ password:''});
         props.history.push("/profile");
       })
       .catch((err) => { console.log(err);
-        document.getElementById("signin-error").style.display = "block"});
+        // document.getElementById("signin-error").style.display = "block"
+      });
   };
 
   return (

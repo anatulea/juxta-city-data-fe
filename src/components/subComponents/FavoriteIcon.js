@@ -16,8 +16,7 @@ export default function FavoriteIcon(props) {
 
   useEffect(() => {
     if (userData.favorites) {
-      // city.id is type number and props.cityData.id is type string and we can't use ===
-      userData.favorites.some((city) => city.id == props.cityData.id) ? setFavorited(true) : setFavorited(false)}
+      userData.favorites.some((city) => city.id === parseInt(props.cityData.id)) ? setFavorited(true) : setFavorited(false)}
   }, [userData.favorites, props.cityData.id]);
 
   const handleClick = (e) => {

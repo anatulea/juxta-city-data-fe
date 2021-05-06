@@ -34,9 +34,9 @@ const SearchBar = () => {
   };
   return (
     <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'column', justifyContent:'center'}}> 
-      <div role='search' style={{display:'flex', flexDirection:'row'}}>
+      <div role='search' style={{display:'flex', flexDirection:'row', width:'100%'}}>
         <Input
-        style={{width:'25vw'}}
+          style={{width:'40vw'}}
           fluid
           type='search'
           name='city'

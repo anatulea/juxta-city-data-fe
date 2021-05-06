@@ -27,10 +27,10 @@ const CitiesList = (props) => {
       data-testid="grid-title"
     >
       <Grid.Row style={{ justifyContent: "center" }}>
-        {randomCities.map((title) => (
-          <Grid.Column mobile={12} tablet={8} computer={4}>
+        {randomCities.map((title, index) => (
+          <Grid.Column  key={index} mobile={12} tablet={8} computer={4}>
             <BestCityCard
-              key={title.city}
+              key={index}
               cities={title}
               handleClick={handleClick}
             />
